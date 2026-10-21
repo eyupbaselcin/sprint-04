@@ -9,52 +9,47 @@ interface EventDetailProps {
 
 function EventDetail({ event, onBack, onEdit }: EventDetailProps) {
   return (
-    <article className={event.image ? "detay-karti" : "detay-karti afissiz"}>
+    <article className="detay detay-grid">
       {event.image && (
-        <figure className="event-poster">
-          <img src={event.image} alt={`${event.title} etkinlik afişi`} />
+        <figure className="detay-afis">
+          <img src={event.image} alt={`${event.title} afişi`} />
+          <figcaption>
+            <i>{event.title} afişi</i>
+          </figcaption>
         </figure>
       )}
-      <div className="kunye">
-        <h2>Etkinlik Künyesi</h2>
+      <div className="detay-kunye">
+        <h2>{event.title}</h2>
         <dl>
-          <dt>Tarih</dt>
+          <dt>
+            <strong>Tarih</strong>
+          </dt>
           <dd>
-            <time dateTime={`${event.date}T${event.time}`}>
-              {formatDate(event.date)}, {event.time}
-            </time>
+            {formatDate(event.date)}, {event.time}
           </dd>
-          <dt>Yer</dt>
+          <dt>
+            <strong>Yer</strong>
+          </dt>
           <dd>{event.location}</dd>
-          <dt>Kategori</dt>
+          <dt>
+            <strong>Kategori</strong>
+          </dt>
           <dd>{event.category}</dd>
-          <dt>Kontenjan</dt>
+          <dt>
+            <strong>Kontenjan</strong>
+          </dt>
           <dd>{event.capacity} kişi</dd>
         </dl>
       </div>
-      <div className="aciklama">
-        <h2>Açıklama</h2>
+      <div className="detay-aciklama">
+        <h3>Açıklama</h3>
         <p>{event.description}</p>
-      </div>
-      <div className="eylemler">
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            onBack();
-          }}
-        >
-          ← Listeye dön
-        </a>
-        <a
-          href="#"
-          onClick={(e) => {
-            e.preventDefault();
-            onEdit(event.id);
-          }}
-        >
+        <button type="button" onClick={onBack}>
+          &larr; Listeye dön
+        </button>
+        <button type="button" onClick={() => onEdit(event.id)}>
           Bu etkinliği güncelle
-        </a>
+        </button>
       </div>
     </article>
   );

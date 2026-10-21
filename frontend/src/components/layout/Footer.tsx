@@ -1,7 +1,7 @@
 function Footer() {
   return (
     <footer>
-      <p>Eyüp Başelçin - 2416501043 - 2026</p>
+      <p>Eyüp Başelçin &middot; 2416501043 &middot; 2026</p>
     </footer>
   );
 }

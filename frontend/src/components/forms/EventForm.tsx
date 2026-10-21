@@ -1,4 +1,6 @@
-import { CATEGORIES } from "../../types/campus-event";
+import type { Category } from "../../types/campus-event";
+
+const categoryOptions: Category[] = ["Seminer", "Atölye", "Söyleşi", "Yarışma"];
 
 interface EventFormProps {
   onSubmit: () => void;
@@ -7,10 +9,7 @@ interface EventFormProps {
 function EventForm({ onSubmit }: EventFormProps) {
   return (
     <>
-      <p className="yardim">
-        Yıldızlı (*) alanlar zorunludur. Bu sprintte form veri kaydetmez;
-        sadece görünümdür.
-      </p>
+      <p>Bu sprintte form sadece görünüm; kayıt yapılmaz.</p>
       <form
         className="form"
         onSubmit={(e) => {
@@ -18,60 +17,47 @@ function EventForm({ onSubmit }: EventFormProps) {
           onSubmit();
         }}
       >
-        <div className="alan">
-          <label htmlFor="title">
-            Etkinlik adı <span className="zorunlu">*</span>
-          </label>
-          <input
-            id="title"
-            type="text"
-            maxLength={80}
-            placeholder="Örn. Kariyer Günleri"
-          />
-        </div>
-        <div className="alan">
-          <label htmlFor="category">
-            Kategori <span className="zorunlu">*</span>
-          </label>
-          <select id="category" defaultValue="">
-            <option value="">Seçiniz</option>
-            {CATEGORIES.map((c) => (
-              <option key={c} value={c}>
-                {c}
-              </option>
-            ))}
-          </select>
-        </div>
-        <div className="alan">
-          <label htmlFor="date">
-            Tarih <span className="zorunlu">*</span>
-          </label>
-          <input id="date" type="date" />
-        </div>
-        <div className="alan">
-          <label htmlFor="time">
-            Saat <span className="zorunlu">*</span>
-          </label>
-          <input id="time" type="time" />
-        </div>
-        <div className="alan">
-          <label htmlFor="location">
-            Yer <span className="zorunlu">*</span>
-          </label>
-          <input
-            id="location"
-            type="text"
-            placeholder="Örn. A Blok Konferans Salonu"
-          />
-        </div>
-        <div className="alan">
-          <label htmlFor="capacity">Kontenjan (isteğe bağlı)</label>
-          <input id="capacity" type="number" min={1} max={1000} />
-        </div>
-        <div className="alan">
-          <label htmlFor="description">Açıklama</label>
-          <textarea id="description" rows={5} />
-        </div>
+        <label htmlFor="title">Etkinlik Adı</label>
+        <input
+          type="text"
+          id="title"
+          maxLength={80}
+          placeholder="Örn. Kariyer Günleri 2026"
+          required
+        />
+
+        <label htmlFor="category">Kategori</label>
+        <select id="category" defaultValue="" required>
+          <option value="" disabled>
+            Seçiniz
+          </option>
+          {categoryOptions.map((c) => (
+            <option key={c} value={c}>
+              {c}
+            </option>
+          ))}
+        </select>
+
+        <label htmlFor="date">Tarih</label>
+        <input type="date" id="date" required />
+
+        <label htmlFor="time">Saat</label>
+        <input type="time" id="time" required />
+
+        <label htmlFor="location">Yer</label>
+        <input
+          type="text"
+          id="location"
+          placeholder="Örn. A Blok Konferans Salonu"
+          required
+        />
+
+        <label htmlFor="capacity">Kontenjan</label>
+        <input type="number" id="capacity" min={1} required />
+
+        <label htmlFor="description">Açıklama</label>
+        <textarea id="description" rows={5} required />
+
         <button type="submit">Kaydet</button>
       </form>
     </>

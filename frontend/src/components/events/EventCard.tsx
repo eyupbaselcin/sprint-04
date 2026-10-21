@@ -10,7 +10,9 @@ function EventCard({ event, onShowDetail }: EventCardProps) {
   return (
     <article className="kart">
       <h3>{event.title}</h3>
-      <span className="rozet">{event.category}</span>
+      <p className="kategori-badge">
+        <strong>{event.category}</strong>
+      </p>
       <p>
         Tarih: {formatDate(event.date)}, {event.time}
       </p>
@@ -24,7 +26,7 @@ function EventCard({ event, onShowDetail }: EventCardProps) {
           onShowDetail(event.id);
         }}
       >
-        Detayları gör →
+        Detayları gör &rarr;
       </a>
     </article>
   );

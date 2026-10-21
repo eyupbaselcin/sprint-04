@@ -1,29 +1,7 @@
-<svg viewBox="0 0 600 800" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#c2410c"/>
-      <stop offset="100%" stop-color="#0f172a"/>
-    </linearGradient>
-  </defs>
-
-  <rect width="600" height="800" fill="url(#bg)"/>
-
-  <rect x="40" y="40" width="520" height="720" fill="none" stroke="#fdba74" stroke-width="3"/>
-
-  <text x="300" y="160" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#fdba74" letter-spacing="4">SDÜ KAMPÜS ETKİNLİK</text>
-
-  <circle cx="300" cy="300" r="90" fill="#7c2d12" stroke="#fdba74" stroke-width="4"/>
-  <g transform="translate(255,255)">
-    <rect x="20" y="20" width="50" height="50" rx="4" fill="none" stroke="#fdba74" stroke-width="6"/><rect x="33" y="33" width="24" height="24" fill="#fdba74"/><g fill="#fdba74"><rect x="30" y="6" width="6" height="12"/><rect x="54" y="6" width="6" height="12"/><rect x="30" y="72" width="6" height="12"/><rect x="54" y="72" width="6" height="12"/><rect x="6" y="30" width="12" height="6"/><rect x="6" y="54" width="12" height="6"/><rect x="72" y="30" width="12" height="6"/><rect x="72" y="54" width="12" height="6"/></g>
-  </g>
-
-  <text x="300" y="460" text-anchor="middle" font-family="Georgia, serif" font-size="46" font-weight="bold" fill="#ffffff">Yapay Zekâya</text>
-  <text x="300" y="520" text-anchor="middle" font-family="Georgia, serif" font-size="46" font-weight="bold" fill="#ffffff">Giriş</text>
-
-  <line x1="180" y1="560" x2="420" y2="560" stroke="#fdba74" stroke-width="2"/>
-
-  <text x="300" y="610" text-anchor="middle" font-family="Verdana, sans-serif" font-size="22" fill="#e2e8f0">3 Kasım 2026 · 13:30</text>
-  <text x="300" y="645" text-anchor="middle" font-family="Verdana, sans-serif" font-size="22" fill="#e2e8f0">A Blok Amfi</text>
-
-  <text x="300" y="720" text-anchor="middle" font-family="Verdana, sans-serif" font-size="16" fill="#94a3b8">Kontenjan: 150 kişi</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 400" role="img" aria-label="Web Tasarım Atölyesi afişi">
+  <rect width="640" height="400" fill="#12203f"/>
+  <rect x="24" y="24" width="592" height="352" fill="none" stroke="#e07a3f" stroke-width="2"/>
+  <text x="320" y="170" text-anchor="middle" font-family="Georgia, serif" font-size="44" fill="#ffffff">Web Tasarım</text>
+  <text x="320" y="230" text-anchor="middle" font-family="Georgia, serif" font-size="44" fill="#e07a3f">Atölyesi</text>
+  <text x="320" y="300" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#c9d3e8">3 Kasım · Bilgisayar Laboratuvarı 1</text>
 </svg>

@@ -7,13 +7,17 @@ interface EventListProps {
   emptyText?: string;
 }
 
-function EventList({ events, onShowDetail, emptyText }: EventListProps) {
+function EventList({
+  events,
+  onShowDetail,
+  emptyText = "Gösterilecek etkinlik yok.",
+}: EventListProps) {
   if (events.length === 0) {
-    return <p className="sonuc result-count">{emptyText}</p>;
+    return <p className="sonuc">{emptyText}</p>;
   }
 
   return (
-    <section className="etkinlik-listesi">
+    <section className="grid-container">
       {events.map((event) => (
         <EventCard key={event.id} event={event} onShowDetail={onShowDetail} />
       ))}
